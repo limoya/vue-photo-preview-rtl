@@ -1,0 +1,9 @@
+html[dir=rtl] .pswp__ui .pswp__counter {
+	right: 0;
+	left: auto;
+	direction: ltr;
+}
+
+html[dir=rtl] .pswp__ui .pswp__button {
+	float: left;
+}
