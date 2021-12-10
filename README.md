@@ -1,27 +1,23 @@
-# vue-photo-preview
+# vue-photo-preview-rtl
 
-> \"基于photoswipe的vue图片预览插件\"
+> \"基于vue-photo-preview的vue图片预览组件\" - 增加rtl版本
 
 ## 说明
-1.简化了photoswipe的默认设置    
-2.取消了图片需设定尺寸的要求    
-3.默认关闭了分享按钮   
-4.简化了html结构   
 原作者 xiaobaozi <826327700@qq.com>    
-[原地址链接](https://826327700.github.io/vue-photo-preview/)  
-### 新增
-5.增加rtl的展示     
-6.两张图片也可以轮播
+[原地址链接](https://github.com/826327700/vue-photo-preview)  
+#### 新增
+增加rtl的展示 option {rtl: true}  
+改为两张图片可以loop
 
 ## 使用
 ``` bash
 # 安装
-npm install vue-photo-preview --save
+npm install vue-photo-preview-rtl --save
 ```
 ```
 # 引入
-import preview from 'vue-photo-preview'
-import 'vue-photo-preview/dist/skin.css'
+import preview from 'vue-photo-preview-rtl'
+import 'vue-photo-preview-rtl/dist/skin.css'
 Vue.use(preview)
 //或者 
 //var option={....} option配置请查看 http://photoswipe.com/documentation/options.html
@@ -34,7 +30,8 @@ Vue.use(preview)
 <script src="路径/dist/vue-photo-preview.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	var options={
-		fullscreenEl:false //关闭全屏按钮
+		fullscreenEl:false, //关闭全屏按钮
+        rtl: true // 开启rtl
 	}
 	
 	Vue.use(vuePhotoPreview,options)
@@ -58,52 +55,6 @@ Vue.use(preview)
 
 <img src="xxx.jpg" large="xxx_3x.jpg" preview="2" preview-text="缩略图与大图模式">
 ```
-
-
-
-### 2019-02-02更新
-修复打开和关闭图片页面时，动画起始位置总是位于图片组最后一张的问题。调整默认点击放大倍数。
-
-### 2018-11-28更新
-解决图片多次点击问题。缩略图只可点击一次，直至图片加载完成后，才可再次打开。
-
-### 2018-11-15更新
-重命名this.init为this.initPreview，解决部分冲突问题。
-去除所有console打印
-
-### 2018-10-15 更新
-解决原图与大图模式下的BUG
-
-### 2018-09-28 更新
-//添加对原插件photoswipe的事件响应，示例：
-```
-this.$preview.on('close',())=>{//close只是众多事件名的其中一个，更多请查看文档
-	console.log('图片查看器被关闭')
-})
-```
-
-//添加图片查看器实例--this.$preview.self 注意：此实例仅在图片查看器被打开时生效
-```
-this.$preview.on('imageLoadComplete',(e,item)=>{
-	console.log(this.$preview.self)  //此时this.$preview.self拥有原插件photoswipe文档中的所有方法和属性
-})
-```
-
-//demo文件夹中index.html可以供参考写法
-//本次更新后继承了原插件的所有事件、方法和属性，如需复杂使用请多多查看[原插件文档](http://photoswipe.com/documentation/api.html) 
-
-//应性能要求 新增大图查看 large标签填写大图路径 （插件的思路是 img的src默认为缩略图），如不填写large，则展示src
-```
-<img src="xxx.jpg" large="xxx_3x.jpg" preview="2" preview-text="描述文字">
-```
-
-### 2018-05-17 更新
-//如果图片是异步生成的，在图片数据更新后调用：
-```
-this.$previewRefresh()
-```
-
-
 
 ## Options   
 [插件配置文档](http://photoswipe.com/documentation/options.html) 

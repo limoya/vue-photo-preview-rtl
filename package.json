@@ -1,12 +1,13 @@
 {
 	"name": "vue-photo-preview-rtl",
 	"description": "基于photoswipe的vue图片预览组件 -- 改写",
-	"version": "1.0.0",
-	"author": "xiaobaozi <826327700@qq.com>",
+	"version": "1.0.1",
+	"private": false,
+	"author": "limoqingya@163.com",
 	"main": "dist/vue-photo-preview.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/826327700/vue-photo-preview"
+		"url": "https://github.com/limoya/vue-photo-preview-rtl"
 	},
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
